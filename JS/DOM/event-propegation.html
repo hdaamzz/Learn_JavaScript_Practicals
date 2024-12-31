@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation Example</title>
+</head>
+<body>
+    <div id="outer">
+        Outer Div
+        <div id="inner">
+            Inner Div
+        </div>
+    </div>
+
+    <script>
+        // Select the elements
+        const outerDiv = document.getElementById('outer');
+        const innerDiv = document.getElementById('inner');
+
+        // Capturing phase listener for outerDiv
+        outerDiv.addEventListener('click', function(event) {
+            alert('Capturing phase: outerDiv');
+        }, true);
+
+        // Bubbling phase listener for outerDiv
+        outerDiv.addEventListener('click', function(event) {
+            alert('Bubbling phase: outerDiv');
+        }, false);
+
+        // Capturing phase listener for innerDiv
+        innerDiv.addEventListener('click', function(event) {
+            alert('Capturing phase: innerDiv');
+        }, true);
+
+        // Bubbling phase listener for innerDiv
+        innerDiv.addEventListener('click', function(event) {
+            alert('Bubbling phase: innerDiv');
+        }, false);
+    </script>
+</body>
+</html>

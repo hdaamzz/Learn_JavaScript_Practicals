@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .home {
+            background-color: aqua;
+            width: 100%;
+            height: 400px;
+        }
+
+        input {
+            margin: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .message {
+            color: darkgreen;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home">
+        <h2> <span>
+                <small>heheh </small>
+            </span>Hello <sup>Rubyy</sup></h2>
+
+        <input type="radio" id="chex">
+        <button id="btn" onclick="change()">
+            click
+        </button>
+
+        <input type="text" placeholder="Type something here" id="textInput">
+        <p>Note: The Enter key is disabled in this input field.</p>
+
+
+        <!-- //prevent right click -->
+        <h1>Right-Click Disabled</h1>
+        <p>Try right-clicking anywhere on this page. It won't work!</p>
+        <p class="message">Right-click is disabled for a better user experience.</p>
+
+
+
+        <!-- focus and blur -->
+        <h1>Focus and Blur Event Example</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <p class="message" id="message"></p>
+        
+    </div>
+
+
+
+    <script>
+        //toggle check
+        let con = document.querySelector('small')
+        let check = document.getElementById('chex')
+        function change() {
+
+            check.checked = !check.checked
+            con.textContent = "Text changed"
+        }
+        //desable particular key
+        document.getElementById('textInput').addEventListener('keydown', function (event) {
+            if (event.key === 'a') {
+                event.preventDefault();
+            }
+        })
+        //prevent right-click
+
+        document.addEventListener('contextmenu', function (event) {
+            event.preventDefault()
+        })
+        //prevent copy
+        document.addEventListener('copy', function (event) {
+            event.preventDefault()
+            alert("dont copy")
+        })
+        
+        //focus and blur
+        const usernameInput = document.getElementById('username');
+        const emailInput = document.getElementById('email');
+        const message = document.getElementById('message');
+
+        // Handle focus event
+        usernameInput.addEventListener('focus', function () {
+            message.textContent = 'You are focused on the Username field.';
+            message.style.color = 'blue';
+        });
+
+        emailInput.addEventListener('focus', function () {
+            message.textContent = 'You are focused on the Email field.';
+            message.style.color = 'blue';
+        });
+
+        // Handle blur event
+        usernameInput.addEventListener('blur', function () {
+            message.textContent = 'You left the Username field.';
+            message.style.color = 'darkred';
+        });
+
+        emailInput.addEventListener('blur', function () {
+            message.textContent = 'You left the Email field.';
+            message.style.color = 'darkred';
+        });
+
+    </script>
+</body>
+
+</html>

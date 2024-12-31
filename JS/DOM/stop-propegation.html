@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            align-items: center;
+            width: 100%;
+            height: 500px;
+            background: red;
+        }
+        .child{
+            align-items: center;
+            width: 100%;
+            height: 300px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer" style="padding: 20px; background: lightblue;">
+        Outer
+        <div id="inner" style="padding: 20px; background: lightgreen;">
+            Inner
+            <button id="button">Click Me</button>
+        </div>
+    </div>
+
+    <script>
+         document.getElementById('outer').addEventListener('click', function () {
+        console.log('Outer Div Clicked');
+    });
+
+    document.getElementById('inner').addEventListener('click', function (event) {
+        console.log('Inner Div Clicked');
+        event.stopPropagation(); // Prevents event from bubbling to #outer
+    });
+
+    document.getElementById('button').addEventListener('click', function () {
+        console.log('Button Clicked');
+    });
+
+    </script>
+</body>
+</html>

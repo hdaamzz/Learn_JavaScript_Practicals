@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://example.com" id="link">Go to Example</a>
+
+    <script>
+        document.getElementById('link').addEventListener('click', function (event) {
+            console.log('Link clicked');
+            event.preventDefault(); // Prevents navigating to the URL
+        });
+    </script>
+</body>
+</html>
+
+<!-- Prevents the default action of the element (e.g., following a link or submitting a form). -->

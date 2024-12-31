@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="element" style="padding: 20px; background: lightgreen;">Click Me</div>
+
+    <script>
+        document.getElementById('element').addEventListener('click', function () {
+        console.log('First Listener');
+    });
+
+    document.getElementById('element').addEventListener('click', function (event) {
+        console.log('Second Listener');
+        event.stopImmediatePropagation(); // Stops further listeners on #element
+    });
+
+    document.getElementById('element').addEventListener('click', function () {
+        console.log('Third Listener');
+    });
+    </script>
+</body>
+</html>
+
+<!-- Stops propogation and prevent any other listeners on the same element from being invoked 
+ 
+Clicking the element logs:
+First Listener
+Second Listener
+The "Third Listener" is not executed because stopImmediatePropagation() prevents it.
+
+
+-->
