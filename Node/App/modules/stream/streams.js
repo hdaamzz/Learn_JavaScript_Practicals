@@ -29,3 +29,10 @@ for(let i=0;i<10;i++){
     },5000)
         
 }
+for(let i=0;i<10;i++){
+    setTimeout(()=>{
+        let time=new Date
+        updateStream.write(`${time}`)
+    },5000)
+        
+}
