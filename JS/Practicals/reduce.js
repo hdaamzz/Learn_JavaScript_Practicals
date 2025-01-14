@@ -135,3 +135,18 @@ const res = numbers.reduce((acc, curr) => {
   
 console.log(res.thirdLargest);
 
+// remove duplicate even numbers from array
+function removeDuplicateEvenNumber2(arr){
+    let seen=new Set();
+    return arr.reduce((acc,num)=>{
+        if(num%2==0){
+            if(!seen.has(num)){
+                seen.add(num);
+                acc.push(num)
+            }
+        }else{
+            acc.push(num)
+        }
+        return acc
+    },[])
+}

@@ -172,152 +172,153 @@ function findValuePath(obj,target,path=[]){
     return null;    
 }
 
-// 15. Combination Sum
+
+
+// sum of multiples of 3 using recursion
+
+function sumOfMultiplesOf3(limit,curr=0){
+    if(curr > limit){
+        return 0;
+    }
+    const sum=curr%3==0?curr:0;
+    return sum+sumOfMultiplesOf3(limit,curr+1)
+}
+
+
+
+
+
+
+// Combination Sum
 // Problem: Find all combinations of numbers that sum up to a target using recursion.
 // Example:
 // Input: nums = [2, 3, 6, 7], target = 7
 // Output: [[7], [2, 2, 3]]
 
 
-// 17. Nested Key Extraction
+// Nested Key Extraction
 // Problem: Extract all the keys from a deeply nested object using recursion.
 // Example:
 // Input: { a: 1, b: { c: 2, d: { e: 3 } } }
 // Output: ['a', 'b', 'c', 'd', 'e']
 
-// 18. Deep Clone
+// Deep Clone
 // Problem: Write a recursive function to deeply clone an object or array.
 // Example:
 // Input: { a: 1, b: { c: 2 } }
 // Output: A new object with the same structure and values.
 
-// 19. Merge Sorted Arrays
+// Merge Sorted Arrays
 // Problem: Merge two sorted arrays into a single sorted array using recursion.
 // Example:
 // Input: [1, 3, 5], [2, 4, 6]
 // Output: [1, 2, 3, 4, 5, 6]
 
-// 20. Find Depth of Nested Structure
+// Find Depth of Nested Structure
 // Problem: Find the depth of the deepest nested array or object using recursion.
 // Example:
 // Input: [1, [2, [3, [4]]]]
 // Output: 4
 
-// 1. Count Zeros in a Number
+// Count Zeros in a Number
 // Problem: Count the number of 0s in a given number using recursion.
 // Example:
 // Input: 102030
 // Output: 3
 
-// 2. Power Calculation
+// Power Calculation
 // Problem: Write a recursive function to calculate a^b (a raised to the power of b).
 // Example:
 // Input: 2^3
 // Output: 8
 
-// 3. String Length
+// String Length
 // Problem: Find the length of a string using recursion (without using .length).
 // Example:
 // Input: "hello"
 // Output: 5
 
-// 4. Array Sum
+// Array Sum
 // Problem: Find the sum of all elements in an array using recursion.
 // Example:
 // Input: [1, 2, 3, 4]
 // Output: 10
 
-// 5. Is Sorted
+// Is Sorted
 // Problem: Check if an array is sorted in ascending order using recursion.
 // Example:
 // Input: [1, 2, 3, 4]
 // Output: true
 
-// 6. Count Uppercase Letters
+// Count Uppercase Letters
 // Problem: Count the number of uppercase letters in a string using recursion.
 // Example:
 // Input: "HeLLoWorLD"
 // Output: 5
 
-// 7. Find Minimum in Array
+// Find Minimum in Array
 // Problem: Find the smallest number in an array using recursion.
 // Example:
 // Input: [3, 1, 4, 1, 5]
 // Output: 1
 
-// 8. Remove Duplicates
+// Remove Duplicates
 // Problem: Remove consecutive duplicate characters from a string using recursion.
 // Example:
 // Input: "aabbcc"
 // Output: "abc"
 
-// 9. Decimal to Binary
+// Decimal to Binary
 // Problem: Convert a decimal number to binary using recursion.
 // Example:
 // Input: 10
 // Output: 1010
 
-// 10. Array Product
+// Array Product
 // Problem: Find the product of all elements in an array using recursion.
 // Example:
 // Input: [1, 2, 3, 4]
 // Output: 24
 
-// 11. Count Vowels
+// Count Vowels
 // Problem: Count the number of vowels in a string using recursion.
 // Example:
 // Input: "hello"
 // Output: 2
 
-// 12. Check Prime
+// Check Prime
 // Problem: Check if a number is prime using recursion.
 // Example:
 // Input: 13
 // Output: true
 
-// 13. Find All Paths in a Grid
-// Problem: Count all possible paths from the top-left to the bottom-right of an m x n grid using recursion.
-// Example:
-// Input: m = 2, n = 2
-// Output: 2
 
-// 14. Reverse Array
+// Reverse Array
 // Problem: Reverse an array using recursion.
 // Example:
 // Input: [1, 2, 3, 4]
 // Output: [4, 3, 2, 1]
 
-// 15. Count Substrings
+// Count Substrings
 // Problem: Count all substrings of a given string using recursion.
 // Example:
 // Input: "abc"
 // Output: 6 (substrings: "a", "b", "c", "ab", "bc", "abc")
 
-// 16. Find GCD
+// Find GCD
 // Problem: Find the greatest common divisor (GCD) of two numbers using recursion.
 // Example:
 // Input: 48, 18
 // Output: 6
 
-// 17. Sum of Array Elements at Odd Indices
+// Sum of Array Elements at Odd Indices
 // Problem: Find the sum of array elements located at odd indices using recursion.
 // Example:
 // Input: [1, 2, 3, 4, 5]
 // Output: 6 (2 + 4)
 
-// 18. Palindrome Partitioning
-// Problem: Partition a string into all possible palindromic substrings using recursion.
-// Example:
-// Input: "aab"
-// Output: [[a, a, b], [aa, b]]
 
-// 19. Generate Parentheses
-// Problem: Generate all valid combinations of n pairs of parentheses using recursion.
-// Example:
-// Input: n = 2
-// Output: ["(())", "()()"]
-
-// 20. Flatten Nested Object
+// Flatten Nested Object
 // Problem: Flatten a deeply nested object into a single-level object using recursion.
 // Example:
 // Input: { a: 1, b: { c: 2, d: { e: 3 } } }
