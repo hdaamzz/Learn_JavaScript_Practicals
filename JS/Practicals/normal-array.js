@@ -40,7 +40,7 @@ function findSecondLargest(arr){
     }
     return secondLargest;
 }
-let arr=[1,3,7,2,8,5,24,23,33,6,8];
+let arr=[1,3,7,2,8,5,24,23,33,33,6,8];
 console.log(findSecondLargest(arr));
 
 //find combination of two numbers given sum as 4?
@@ -147,6 +147,29 @@ function removeDuplicateEvenNumber(arr){
         return true
     })
 }
+//removeduplicate even numbers from array without set
+function removeEven(arr){
+    const unique=[];
+    for(let i=0;i<arr.length;i++){
+        const num=arr[i];
+        if(num%2==0){
+            let isDup=false;
+            for(let j=0;j<unique.length;j++){
+                if(unique[j]==num){
+                    isDup=true;
+                    break
+                }
+            }
+            if(!isDup){
+                unique.push(num)
+            }
+        }else{
+            unique.push(num)
+        }
+    }
+    arr=unique
+    return arr
+}
 
 // function to remove last property from an object
 function removeObjectLastProperty(obj){
@@ -184,6 +207,63 @@ function longestSequenze(arr){
             }
             start+=temp.length
             
+        }
+    }
+    return res
+}
+
+//generate n number of prime number
+function generateNprime(n,res=[],flag){
+    let curr=2
+    while(res.length<n){
+        let flag=false
+        for(let j=2;j<=Math.sqrt(curr);j++){
+            if(curr%j==0){
+                flag=true
+                break;
+            }
+        }
+        if(!flag){
+            res.push(curr)
+        }
+        curr++
+    }
+    return res
+}
+
+//remove Nth element
+function removeNthElement(arr, n) {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (i !== n) {
+            result[result.length] = arr[i];
+        }
+    }
+    return result;
+}
+
+//--remove largest element in an array
+
+let find=[2,3,5,8,5,3,7,8,6,65,5,4,3,2,2,34]
+
+let maxI=0;
+
+for(let i=0;i<find.length;i++){
+    if(find[i]>find[maxI]){
+        maxI=i
+    }
+}
+for(let i=maxI;i<find.length-1;i++){
+    find[i]=find[i+1];
+}
+
+//remove adjacent odd elements from array,
+
+let ar=[1,2,3,3,3,4,5,1,6,7,7,8,98,8,8,11];
+function removeadjacentodd(ar,res=[]){
+    for(let i=0;i<ar.length;i++){
+        if(!(ar[i]%2==1 && ar[i-1]%2==1)){
+            res.push(ar[i])
         }
     }
     return res

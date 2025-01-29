@@ -150,3 +150,12 @@ function removeDuplicateEvenNumber2(arr){
         return acc
     },[])
 }
+
+//sum of all positive number
+
+let mixedArr=[1,2,3,-2,-5,-6,3,2,-56,55];
+
+let positive=mixedArr.reduce((acc,curr)=>{
+    if(curr>0)acc.push(curr);
+    return acc
+},[]);

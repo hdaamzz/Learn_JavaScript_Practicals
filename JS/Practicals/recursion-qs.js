@@ -80,6 +80,16 @@ function palindrome(str,start=0,end=str.length-1){
     return palindrome(str,start+1,end-1)
 }
 
+function checkPalindrome(str){
+    if(str.length <=1){
+        return true
+    }
+    if(str[0] !== str[str.length-1]){
+        return false
+    }
+    return checkPalindrome(str.slice(1,-1))
+}
+
 
 // Binary Search
 // Problem: Implement a recursive binary search algorithm.

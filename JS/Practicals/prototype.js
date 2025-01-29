@@ -27,7 +27,7 @@ function Dog(name,breed){
     this.breed=breed
 }
 
-Dog.prototype=Object.create(Animal.prototype);
+Dog.prototype=Object.create(Animal.prototype); //prototype inheritance aanu ith
 Dog.prototype.constructor=Dog;
 
 Dog.prototype.makeSound=function (){
