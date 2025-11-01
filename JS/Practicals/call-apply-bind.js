@@ -11,6 +11,7 @@ const anotherPerson = {
     name: "Mike"
 };
 
+
 //-------------------------------------------------------------------------------------------
 // call(): Calls a function with a given this value and arguments provided individually
 

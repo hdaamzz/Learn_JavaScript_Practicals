@@ -50,7 +50,7 @@ add(1,200,(err,total)=>{
 })
 
 
-//consvert to promise
+//convert to promise
 
 function adding(a,b){
     return new Promise((res,rej)=>{
@@ -88,13 +88,19 @@ function divving(a,b){
     })
 }
 
-adding(50,50)
-.then(sum=>subbing(sum,2))
-.then(sub=>multing(sub,5))
-.then(mul=>divving(mul,2))
-.then(res=>console.log(res))
-.catch((err)=>console.error(err))
-
+adding(30,40).then((sum)=>{
+    return subbing(sum,10)
+}).then((sub)=>{
+    return multing(sub,50)
+}).then((mul)=>{
+    return divving(mul,2)
+}).then((res)=>{
+    console.log(res);
+}).catch((err)=>{
+    console.error(err)
+}).finally(()=>{
+    console.log('completed')
+})
 
 async function calculate() {
     try {

@@ -6,7 +6,7 @@ function reverseEachWord(input) {
     
     for (let char of input + ' ') {
         if (char === ' ') {
-            // Reverse and add the collected word
+            // Reverse and add the collected word 
             for (let i = word.length - 1; i >= 0; i--) {
                 result += word[i];
             }
@@ -59,7 +59,7 @@ function findPairsWithSum(arr,target){
 }
 console.log(findPairsWithSum(arr,7));
 
-// .find largest substring without vowels from a string
+// find largest substring without vowels from a string
 
 function findLargestSubString(str){
     let splited=str.split('');
@@ -267,4 +267,24 @@ function removeadjacentodd(ar,res=[]){
         }
     }
     return res
+}
+
+//romove element without using inbuilt method
+function del(arra,x){
+    let ind =-1
+    let arr = arra
+    for(let i =0;i<arr.length;i++){
+        if(arr[i]==x){
+            ind = i
+           break
+            
+        }
+    }
+    if(ind ==-1) return  arr
+    for(let j = ind;j<arr.length;j++){
+        arr[j]=arr[j+1]
+    }
+    arr.length = arr.length-1
+    
+    return arr
 }
